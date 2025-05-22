@@ -1,8 +1,7 @@
 from PySide6.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QListWidget,
                                     QListWidgetItem, QPushButton, QLabel)
 from PySide6.QtCore import Signal, Qt
-from PySide6.QtGui import QIcon, QFont
-import os
+from PySide6.QtGui import QFont
 
 class ProcessSelector(QDialog):
     """进程选择器对话框，用于选择要捕获的窗口/进程"""

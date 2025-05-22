@@ -1,5 +1,5 @@
 import os
-from typing import Optional, Callable
+from typing import Optional
 from PySide6.QtCore import QObject, Signal, Slot
 import dashscope
 from dashscope.audio.asr import Recognition, RecognitionCallback, RecognitionResult

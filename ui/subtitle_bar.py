@@ -1,11 +1,9 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QTextEdit
 from PySide6.QtCore import (
     Qt,
-    Signal,
-    QPoint,
-    QSize
+    Signal
 )
-from PySide6.QtGui import QFont, QColor, QPalette, QTextCursor
+from PySide6.QtGui import QFont, QColor
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QTextEdit
 

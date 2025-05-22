@@ -1,6 +1,6 @@
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget , QMenu, QMenuBar
-from PySide6.QtCore import Qt, Signal, Slot
-from PySide6.QtGui import QIcon, QKeySequence, QAction
+from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
+from PySide6.QtCore import Slot
+from PySide6.QtGui import QAction
 
 from ..ui.subtitle_bar import SubtitleBar
 from ..ui.process_selector import ProcessSelector
@@ -9,9 +9,6 @@ from ..ui.theme_manager import ThemeManager
 from ..core.audio_processor import AudioProcessor
 from ..core.speech_recognition import SpeechRecognizer
 from ..utils.tray_manager import TrayManager
-from ..utils.system_utils import get_resource_path
-
-import os
 
 class MainWindow(QMainWindow):
     """主窗口类，管理应用程序的主要功能和界面"""

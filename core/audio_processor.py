@@ -1,9 +1,8 @@
 import time
 from typing import Optional
-import pyaudio
 import audioop
-import numpy as np
-from PySide6.QtCore import QObject, Signal, Slot, QThread
+import pyaudio
+from PySide6.QtCore import QObject, Signal, QThread
 
 class AudioProcessorThread(QThread):
     """音频处理线程，负责读取和处理音频数据"""

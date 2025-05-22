@@ -2,7 +2,7 @@ from PySide6.QtWidgets import (QDialog, QTabWidget, QVBoxLayout, QHBoxLayout, QF
                                     QComboBox, QSlider, QPushButton, QColorDialog, QLabel,
                                     QSpinBox, QCheckBox, QGroupBox, QWidget)
 from PySide6.QtCore import Signal, Qt
-from PySide6.QtGui import QColor, QFont
+from PySide6.QtGui import QColor
 
 class SettingsDialog(QDialog):
     """设置对话框，用于配置应用程序设置"""
