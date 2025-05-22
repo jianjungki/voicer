@@ -32,3 +32,38 @@ jobs:
         with:
           name: windows-executable
           path: dist/voicer.exe #replace your_script.py
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-executable
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.run_number }}  # Creates a tag like v123
+          release_name: Release v${{ github.run_number }}
+          body: |
+            Auto-generated release with Windows executable.
+            # Add any other release notes here
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-between-jobs
+          asset_path: voicer.exe
+          asset_name: voicer.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+
