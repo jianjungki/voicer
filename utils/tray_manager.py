@@ -1,7 +1,8 @@
+import os
 from PySide6.QtWidgets import QSystemTrayIcon, QMenu
 from PySide6.QtGui import QIcon, QAction
 from PySide6.QtCore import QObject, Signal
-import os
+
 from ..utils.system_utils import get_resource_path, is_macos
 
 class TrayManager(QObject):
@@ -18,6 +19,7 @@ class TrayManager(QObject):
         super().__init__(parent)
         self.tray_icon = None
         self.stay_on_top = False
+        self.stay_on_top_action = None
         
         # macOS 下不使用系统托盘
         if not is_macos():
@@ -116,3 +118,4 @@ class TrayManager(QObject):
         if self.tray_icon is not None:
             self.tray_icon.hide()
             self.tray_icon = None
+            

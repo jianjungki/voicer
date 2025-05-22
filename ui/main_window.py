@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
+from PySide6.QtWidgets import QMainWindow, QWidget
 from PySide6.QtCore import Slot
 from PySide6.QtGui import QAction
 
@@ -18,6 +18,9 @@ class MainWindow(QMainWindow):
         self.config = config
         self.subtitle_bar = None
         self.selected_process = None
+        self.debug_mode_action = None
+        self.show_subtitle_action = None
+        self.stay_on_top_action = None
         
         # 创建组件
         self.setup_components()
@@ -56,7 +59,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)
         
         # 创建布局
-        layout = QVBoxLayout(central_widget)
+        # layout = QVBoxLayout(central_widget)
         
         # 创建菜单栏
         self.create_menu_bar()
@@ -240,7 +243,7 @@ class MainWindow(QMainWindow):
         # 更新音频处理器配置
         self.audio_processor.update_config()
     
-    def toggle_debug_mode(self, checked):
+    def toggle_debug_mode(self):
         """切换调试模式"""
         if self.subtitle_bar:
             is_debug = self.subtitle_bar.toggle_debug_mode()

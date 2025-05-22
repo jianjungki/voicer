@@ -28,10 +28,9 @@ class WindowManager(QObject):
         system = platform.system()
         if system == 'Windows':
             return self._get_windows_window_list()
-        elif system == 'Darwin':  # macOS
+        if system == 'Darwin':  # macOS
             return self._get_macos_window_list()
-        else:
-            return self._get_default_window_list()
+        return self._get_default_window_list()
     
     def _get_windows_window_list(self) -> List[Dict[str, Any]]:
         """获取 Windows 窗口列表"""
@@ -40,7 +39,7 @@ class WindowManager(QObject):
             import win32process
             processes = []
             
-            def window_enumeration_handler(hwnd, ctx):
+            def window_enumeration_handler(hwnd, _ctx):
                 if win32gui.IsWindowVisible(hwnd):
                     _, pid = win32process.GetWindowThreadProcessId(hwnd)
                     title = win32gui.GetWindowText(hwnd)
@@ -70,7 +69,7 @@ class WindowManager(QObject):
                 end repeat
             end tell
             '''
-            result = subprocess.run(['osascript', '-e', script], capture_output=True, text=True)
+            result = subprocess.run(['osascript', '-e', script], capture_output=True, text=True, check=True)
             if result.returncode == 0:
                 titles = result.stdout.strip().split(', ')
                 return [{'title': title, 'pid': 0, 'hwnd': None} for title in titles if title]
@@ -103,3 +102,4 @@ class WindowManager(QObject):
             if window['hwnd'] == hwnd:
                 return window
         return None
+        

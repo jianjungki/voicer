@@ -152,3 +152,4 @@ class AudioProcessor(QObject):
     def update_config(self):
         """更新配置"""
         self._thread.update_config()
+        

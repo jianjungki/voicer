@@ -4,8 +4,6 @@ from PySide6.QtCore import (
     Signal
 )
 from PySide6.QtGui import QFont, QColor
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QTextEdit
 
 class SubtitleBar(QWidget):
     """字幕条组件，显示实时字幕"""
@@ -177,3 +175,4 @@ class SubtitleBar(QWidget):
         """窗口关闭事件"""
         self.closed.emit()
         event.accept()
+        

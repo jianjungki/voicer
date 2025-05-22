@@ -8,10 +8,9 @@ def get_system_font() -> str:
     system = platform.system()
     if system == 'Windows':
         return "Microsoft YaHei"  # Windows 微软雅黑
-    elif system == 'Darwin':
+    if system == 'Darwin':
         return "PingFang SC"  # macOS 苹方
-    else:
-        return "Sans"  # 其他系统
+    return "Sans"  # 其他系统
 
 def is_windows() -> bool:
     """检查是否为 Windows 系统"""
@@ -30,10 +29,9 @@ def get_app_data_path() -> str:
     system = platform.system()
     if system == 'Windows':
         return os.path.join(os.environ.get('APPDATA', ''), 'AudioSubtitle')
-    elif system == 'Darwin':
+    if system == 'Darwin':
         return os.path.join(os.path.expanduser('~'), 'Library', 'Application Support', 'AudioSubtitle')
-    else:
-        return os.path.join(os.path.expanduser('~'), '.audiosubtitle')
+    return os.path.join(os.path.expanduser('~'), '.audiosubtitle')
 
 def ensure_dir_exists(path: str) -> None:
     """确保目录存在"""

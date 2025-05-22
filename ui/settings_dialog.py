@@ -13,6 +13,30 @@ class SettingsDialog(QDialog):
     def __init__(self, config, parent=None):
         super().__init__(parent)
         self.config = config
+        
+        # Initialize UI elements
+        self.tab_widget = None
+        self.theme_combo = None
+        self.opacity_slider = None
+        self.opacity_label = None
+        self.font_size_spin = None
+        self.text_color_button = None
+        self.bg_color_button = None
+        self.highlight_color_button = None
+        self.auto_start_check = None
+        self.stay_on_top_check = None
+        self.silence_threshold_slider = None
+        self.silence_threshold_label = None
+        self.silence_duration_spin = None
+        self.api_key_label = None
+        self.ok_button = None
+        self.cancel_button = None
+        
+        # Initialize colors
+        self.text_color = None
+        self.bg_color = None
+        self.highlight_color = None
+        
         self.setup_ui()
         self.load_settings()
     
@@ -290,3 +314,4 @@ class SettingsDialog(QDialog):
         
         # 调用父类的 accept 方法
         super().accept()
+        

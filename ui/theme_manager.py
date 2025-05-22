@@ -1,6 +1,6 @@
+import os
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QObject, Signal
-import os
 from ..utils.system_utils import get_resource_path
 
 class ThemeManager(QObject):
@@ -41,8 +41,7 @@ class ThemeManager(QObject):
         """获取样式文件路径"""
         if theme_name == "深色":
             return get_resource_path(os.path.join("styles", "dark.qss"))
-        else:
-            return get_resource_path(os.path.join("styles", "light.qss"))
+        return get_resource_path(os.path.join("styles", "light.qss"))
     
     def toggle_theme(self):
         """切换主题"""
