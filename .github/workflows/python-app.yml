@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: PyInstaller
-        run: pyinstaller --onefile your_script.py #replace your_script.py
+        run: pyinstaller --onefile main.py #replace your_script.py
         shell: pwsh  # Use PowerShell for correct encoding
 
       - name: Upload Artifact
