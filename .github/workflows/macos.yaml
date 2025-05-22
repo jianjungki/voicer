@@ -1,0 +1,40 @@
+name: Build macOS DMG
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install -r requirements.txt
+
+      - name: PyInstaller
+        run: pyinstaller --onefile --windowed your_script.py #replace your_script.py
+
+      - name: Create DMG
+        run: |
+          pip install dmgbuild
+          dmgbuild --source dist --destination voicer.dmg your_dmg_settings.py # Make sure to change voicer.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-dmg
+          path: voicer.dmg # Make sure to change voicer.dmg
