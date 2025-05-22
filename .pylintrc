@@ -1,0 +1,48 @@
+[MESSAGES CONTROL]
+disable=
+    C0114,  # Missing module docstring (we might choose to add these later)
+    C0115,  # Missing class docstring (ditto)
+    C0116,  # Missing function or method docstring (ditto)
+    W0511,  # TODO or FIXME usage (disable initially, enable selectively)
+    W0703,   # Catching too general exception Exception
+    C0303   # Trailing whitespace
+
+[FORMAT]
+max-line-length=120
+
+[BASIC]
+good-names=
+    i,
+    j,
+    k,
+    ex,
+    Run,
+    _,
+
+[TYPECHECK]
+# Needed to allow dynamically set attributes
+generated-members=
+    PySide6.*,
+    QtCore.Slot,
+    QtGui.QAction.*,
+    QtWidgets.QApplication.*,
+    QtWidgets.QMessageBox.*,
+    QtWidgets.QFileDialog.*,
+    QtWidgets.QColorDialog.*,
+    QtWidgets.QFontDialog.*,
+    QtWidgets.QInputDialog.*,
+    QtWidgets.QProgressDialog.*,
+    QtWidgets.QErrorMessage.*,
+    QtWidgets.QWizard.*,
+    QtWidgets.QDockWidget.*,
+    QtWidgets.QCompleter.*,
+    QtWidgets.QUndoCommand.*,
+    QtQuick.*,
+    QtQml.*
+
+[DESIGN]
+max-parents=7
+
+[IMPORTS]
+# Add the paths to the places where you install packages
+extension-pkg-whitelist=PySide6

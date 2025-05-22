@@ -12,23 +12,23 @@ def main():
     # 确保应用数据目录存在
     app_data_path = get_app_data_path()
     ensure_dir_exists(app_data_path)
-    
+
     # 创建应用实例
     app = QApplication(sys.argv)
     app.setApplicationName("实时字幕")
-    
+
     # 加载应用图标
     icon_path = get_resource_path(os.path.join('icons', 'app.png'))
     if os.path.exists(icon_path):
         app.setWindowIcon(QIcon(icon_path))
-    
+
     # 加载配置
     config = Config(os.path.join(app_data_path, 'config.json'))
-    
+
     # 创建并显示主窗口
     window = MainWindow(config)
     window.show()
-    
+
     # 运行应用程序
     sys.exit(app.exec())
 
