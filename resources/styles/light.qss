@@ -1,0 +1,154 @@
+/* 浅色主题样式表 */
+
+/* 全局样式 */
+QWidget {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+
+/* 按钮样式 */
+QPushButton {
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 5px 15px;
+    min-height: 25px;
+}
+
+QPushButton:hover {
+    background-color: #E0E0E0;
+}
+
+QPushButton:pressed {
+    background-color: #D0D0D0;
+}
+
+/* 菜单样式 */
+QMenuBar {
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+QMenuBar::item {
+    padding: 5px 10px;
+    background: transparent;
+}
+
+QMenuBar::item:selected {
+    background: #E0E0E0;
+}
+
+QMenu {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+}
+
+QMenu::item {
+    padding: 5px 30px 5px 20px;
+}
+
+QMenu::item:selected {
+    background-color: #E0E0E0;
+}
+
+/* 列表部件样式 */
+QListWidget {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+QListWidget::item {
+    padding: 5px;
+}
+
+QListWidget::item:hover {
+    background-color: #F0F0F0;
+}
+
+QListWidget::item:selected {
+    background-color: #E0E0E0;
+    color: #000000;
+}
+
+/* 标签页样式 */
+QTabWidget::pane {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+QTabBar::tab {
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+    border-bottom: none;
+    padding: 5px 10px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+QTabBar::tab:selected {
+    background-color: #FFFFFF;
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    border: none;
+    background-color: #F0F0F0;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #CCCCCC;
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #BBBBBB;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* 滑块样式 */
+QSlider::groove:horizontal {
+    border: 1px solid #CCCCCC;
+    height: 6px;
+    background: #F0F0F0;
+    margin: 2px 0;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    width: 18px;
+    height: 18px;
+    margin: -6px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #F0F0F0;
+}
+
+/* 分组框样式 */
+QGroupBox {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 10px;
+    padding: 0 5px;
+    color: #666666;
+}
