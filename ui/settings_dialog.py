@@ -1,8 +1,10 @@
+from typing import Optional
 from PySide6.QtWidgets import (QDialog, QTabWidget, QVBoxLayout, QHBoxLayout, QFormLayout,
                                     QComboBox, QSlider, QPushButton, QColorDialog, QLabel,
                                     QSpinBox, QCheckBox, QGroupBox, QWidget)
 from PySide6.QtCore import Signal, Qt
 from PySide6.QtGui import QColor
+
 
 class SettingsDialog(QDialog):
     """设置对话框，用于配置应用程序设置"""
@@ -14,28 +16,28 @@ class SettingsDialog(QDialog):
         super().__init__(parent)
         self.config = config
         
-        # Initialize UI elements
-        self.tab_widget = None
-        self.theme_combo = None
-        self.opacity_slider = None
-        self.opacity_label = None
-        self.font_size_spin = None
-        self.text_color_button = None
-        self.bg_color_button = None
-        self.highlight_color_button = None
-        self.auto_start_check = None
-        self.stay_on_top_check = None
-        self.silence_threshold_slider = None
-        self.silence_threshold_label = None
-        self.silence_duration_spin = None
-        self.api_key_label = None
-        self.ok_button = None
-        self.cancel_button = None
+        # Initialize UI elements with type hints
+        self.tab_widget: Optional[QTabWidget] = None
+        self.theme_combo: Optional[QComboBox] = None
+        self.opacity_slider: Optional[QSlider] = None
+        self.opacity_label: Optional[QLabel] = None
+        self.font_size_spin: Optional[QSpinBox] = None
+        self.text_color_button: Optional[QPushButton] = None
+        self.bg_color_button: Optional[QPushButton] = None
+        self.highlight_color_button: Optional[QPushButton] = None
+        self.auto_start_check: Optional[QCheckBox] = None
+        self.stay_on_top_check: Optional[QCheckBox] = None
+        self.silence_threshold_slider: Optional[QSlider] = None
+        self.silence_threshold_label: Optional[QLabel] = None
+        self.silence_duration_spin: Optional[QSpinBox] = None
+        self.api_key_label: Optional[QLabel] = None
+        self.ok_button: Optional[QPushButton] = None
+        self.cancel_button: Optional[QPushButton] = None
         
         # Initialize colors
-        self.text_color = None
-        self.bg_color = None
-        self.highlight_color = None
+        self.text_color: Optional[QColor] = None
+        self.bg_color: Optional[QColor] = None
+        self.highlight_color: Optional[QColor] = None
         
         self.setup_ui()
         self.load_settings()
