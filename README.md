@@ -2,8 +2,8 @@
 
 [![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 <!-- Add other badges here if you like, e.g., build status, version -->
-<!-- Example: [![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/voicer/YOUR_WORKFLOW_FILE.yml?branch=main)](https://github.com/YOUR_USERNAME/voicer/actions) -->
-<!-- Example: [![Release](https://img.shields.io/github/v/release/YOUR_USERNAME/voicer)](https://github.com/YOUR_USERNAME/voicer/releases) -->
+Example: [![Build Status](https://img.shields.io/github/actions/workflow/status/jianjungki/voicer/build.yml?branch=main)](https://github.com/jianjungki/voicer/actions)
+Example: [![Release](https://img.shields.io/github/v/release/jianjungki/voicer)](https://github.com/jianjungki/voicer/releases)
 
 Voicer is a desktop application designed to capture audio from specific programs running on your computer. It can display this audio visually, record it, provide real-time translation into various languages, and ultimately output recordings, transcripts, and summaries.
 
@@ -35,7 +35,7 @@ Voicer is a desktop application designed to capture audio from specific programs
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/voicer.git
+    git clone https://github.com/jianjungki/voicer.git
     cd voicer
     ```
 2.  (Set up a virtual environment - recommended)
